@@ -24,38 +24,65 @@ Acest e-book reader foloseste un microcontroller ESP32-C6 WROOM care controleaza
 Componente Hardware Utilizate
 
 ESP32-C6: Microcontroller principal pentru procesarea datelor si conectivitate.
+
 E-Paper Display: Display cu consum redus de energie, conectat prin SPI.
+
 Conectori pentru SD Card: Permite stocarea suplimentara a cartilor electronice.
+
 Memorie NOR Flash 64MB: Stocare suplimentara pentru fisiere tip e-book.
+
 Baterie Li-Po: Sursa principala de alimentare a dispozitivului.
+
 Conector USB-C: Permite incarcarea si transferul de date.
+
 Modul RTC DS3231SN: Functionalitate de ceas in timp real.
+
 Senzor de Mediu BME680: Monitorizeaza parametrii de mediu prin I2C.
+
 Senzor CO2 MH-Z19B: Masoara nivelul de CO2 prin UART.
+
 Senzor particule PMSA003: Detecteaza particule fine prin UART.
+
 MAX17048G: Circuit de management pentru baterie.
+
 
 Interfete Principale
 
 SPI: Utilizata pentru E-Paper display si memoria Flash.
+
 I2C: Conecteaza senzorul BME680 si modulul RTC.
+
 UART: Folosita pentru comunicatie cu senzorii PMSA003 si MH-Z19B.
+
 GPIO: Utilizati pentru butoane si alte componente periferice.
+
 
 Pini Utilizati - ESP32-C6
 
 GPIO18, GPIO19: SCK si MISO pentru interfata SPI.
+
 GPIO5: Chip Select pentru memoria Flash.
+
 GPIO4: Reset pentru E-Paper.
+
 GPIO22: SCL pentru interfata I2C.
+
 GPIO21: SDA pentru interfata I2C.
+
 GPIO16: TX pentru comunicatie seriala.
+
 GPIO17: RX pentru comunicatie seriala.
+
 GPIO20, GPIO21, GPIO22: Conectati la butoanele de control.
+
 GPIO10: Chip Select pentru cardul SD.
+
 GPIO1: MOSI pentru interfata SPI.
+
 GPIO2: MISO pentru dispozitive SPI.
+
 GPIO3: SCK pentru comunicatie SPI.
+
 
 
 
