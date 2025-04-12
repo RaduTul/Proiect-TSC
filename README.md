@@ -21,70 +21,40 @@ Pentru TP-uri nu am gasit un model 3D, asa ca am facut un cerc pe care l-am ridi
 [(BOM)](Manufacturing/BOM_proiect2025%20v19.csv)
 
 ## Functionalitatile Hardware
-Acest e-book reader foloseste un microcontroller ESP32-C6 WROOM care controleaza un display e-ink de 1.5" cu rezolutie 200x200px. Dispozitivul include urmatoarele componente principale:
-
+Acest e-book reader foloseste un microcontroller ESP32-C6 WROOM care controleaza un display e-ink de 7.5" cu rezolutie 800x480px. Dispozitivul include urmatoarele componente principale:
 Componente Hardware Utilizate
 
 ESP32-C6: Microcontroller principal pentru procesarea datelor si conectivitate.
-
-E-Paper Display: Display cu consum redus de energie, conectat prin SPI.
-
+E-Paper Display 7.5": Display cu consum redus de energie, conectat prin SPI.
 Conectori pentru SD Card: Permite stocarea suplimentara a cartilor electronice.
-
-Memorie NOR Flash 64MB: Stocare suplimentara pentru fisiere tip e-book.
-
+Memorie NOR Flash W25Q512: Stocare suplimentara pentru fisiere tip e-book.
 Baterie Li-Po: Sursa principala de alimentare a dispozitivului.
-
 Conector USB-C: Permite incarcarea si transferul de date.
-
 Modul RTC DS3231SN: Functionalitate de ceas in timp real.
-
-Senzor de Mediu BME680: Monitorizeaza parametrii de mediu prin I2C.
-
-Senzor CO2 MH-Z19B: Masoara nivelul de CO2 prin UART.
-
-Senzor particule PMSA003: Detecteaza particule fine prin UART.
-
+Senzor BME680: Monitorizeaza temperatura si umiditate prin interfata I2C.
 MAX17048G: Circuit de management pentru baterie.
 
-
-Interfete Principale
+## Interfete Principale
 
 SPI: Utilizata pentru E-Paper display si memoria Flash.
-
 I2C: Conecteaza senzorul BME680 si modulul RTC.
-
-UART: Folosita pentru comunicatie cu senzorii PMSA003 si MH-Z19B.
-
 GPIO: Utilizati pentru butoane si alte componente periferice.
 
+## Pini Utilizati - ESP32-C6
 
-Pini Utilizati - ESP32-C6
-
-GPIO18, GPIO19: SCK si MISO pentru interfata SPI.
-
-GPIO5: Chip Select pentru memoria Flash.
-
-GPIO4: Reset pentru E-Paper.
-
-GPIO22: SCL pentru interfata I2C.
-
-GPIO21: SDA pentru interfata I2C.
-
-GPIO16: TX pentru comunicatie seriala.
-
-GPIO17: RX pentru comunicatie seriala.
-
-GPIO20, GPIO21, GPIO22: Conectati la butoanele de control.
-
-GPIO10: Chip Select pentru cardul SD.
-
-GPIO1: MOSI pentru interfata SPI.
-
-GPIO2: MISO pentru dispozitive SPI.
-
-GPIO3: SCK pentru comunicatie SPI.
-
+GPIO6 (IO6): SCK pentru interfata SPI (inlocuieste GPIO3/GPIO18/GPIO19 din listarea initiala).
+GPIO2 (IO2): MISO pentru interfata SPI.
+GPIO7 (IO7): MOSI pentru interfata SPI (inlocuieste GPIO1 din listarea initiala).
+GPIO11 (IO11): Chip Select pentru memoria Flash (inlocuieste GPIO5 din listarea initiala).
+GPIO3 (IO3): Reset pentru E-Paper (inlocuieste GPIO4 din listarea initiala).
+GPIO4 (IO4): Chip Select pentru cardul SD (inlocuieste GPIO10 din listarea initiala).
+GPIO22 (IO22): SCL pentru interfata I2C.
+GPIO21 (IO21): SDA pentru interfata I2C.
+GPIO16 (IO16): TX pentru comunicatie seriala.
+GPIO17 (IO17): RX pentru comunicatie seriala.
+GPIO20 (IO20): Conectat la butonul BOOT.
+GPIO21 (IO21): Conectat la butonul RESET (posibil duplicat cu SDA, necesita verificare in schematic).
+GPIO22 (IO22): Conectat la butonul CHANGE (posibil duplicat cu SCL, necesita verificare in schematic).
 
 
 
